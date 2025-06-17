@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auraya - Boutique</title>
+  <link rel="stylesheet" href="site.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="LOGO1.jpg" alt="Auraya Logo" />
+      <span>Auraya</span>
+    </div>
+    <input type="text" id="search-bar" placeholder="Rechercher..." />
+    <div id="cart-icon">🛒 (<span id="cart-count">0</span>)</div>
+  </header>
+
+  <!-- Filtres -->
+  <section class="filters hidden">
+    <select id="category-filter">
+      <option value="all">Toutes les catégories</option>
+      <option value="pantalon">Pantalon</option>
+      <option value="chemise">Chemise</option>
+      <option value="chaussure">Chaussure</option>
+    </select>
+    <select id="price-filter">
+      <option value="all">Tous les prix</option>
+      <option value="low">Moins de 50dh</option>
+      <option value="medium">50dh - 100dh</option>
+      <option value="high">Plus de 100dh</option>
+    </select>
+  </section>
+
+  <!-- Bouton retour -->
+  <button id="back-button" class="hidden">← Retour</button>
+
+  <!-- Catégories -->
+  <section id="categories">
+    <div class="category" data-name="femme">
+      <img src="photowom.jpg" alt="Femme" />
+      <h2>Femme</h2>
+    </div>
+    <div class="category" data-name="homme">
+      <img src="photoman.jpg" alt="Homme" />
+      <h2>Homme</h2>
+    </div>
+    <div class="category" data-name="enfant">
+      <img src="photoenf.jpg" alt="Enfant" />
+      <h2>Enfant</h2>
+    </div>
+  </section>
+
+  <!-- Liste des produits -->
+  <section id="product-list" class="hidden"></section>
+
+  <!-- Détail produit -->
+  <div id="product-detail" class="hidden"></div>
+
+  <!-- Panier -->
+  <aside id="cart-panel" class="hidden">
+    <h3>Panier</h3>
+    <ul id="cart-items"></ul>
+  </aside>
+
+  <!-- Footer avec lien vers admin -->
+  <footer style="text-align: center; padding: 1rem; margin-top: 2rem;">
+    <a href="#" onclick="loginAdmin()" style="font-size: 0.9rem; color: #555;">Espace Admin</a>
+  </footer>
+
+  <!-- Script principal -->
+  <script src="site.js"></script>
+
+  <!-- Script pour accès admin -->
+  <script>
+    function loginAdmin() {
+      const password = prompt("Entrez le mot de passe admin :");
+      if (password === "admin123") {
+        window.location.href = "admin.html";
+      } else {
+        alert("Mot de passe incorrect !");
+      }
+    }
+  </script>
+</body>
+</html>

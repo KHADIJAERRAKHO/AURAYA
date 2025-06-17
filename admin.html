@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tableau de Bord Admin</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <header><h1>Tableau de Bord - Admin</h1></header>
+  <main>
+    <section class="form-section">
+      <h2>Ajouter un Produit</h2>
+      <form id="add-product-form" enctype="multipart/form-data">
+        <input type="text" id="product-name" placeholder="Nom du produit" required />
+        <input type="number" id="product-price" placeholder="Prix" required min="0" />
+        <input type="number" id="product-stock" placeholder="Stock" required min="0" />
+        <input type="file" id="product-image" accept="image/*" required />
+        <select id="product-category">
+          <option value="homme">Homme</option>
+          <option value="femme">Femme</option>
+          <option value="enfant">Enfant</option>
+        </select>
+        <button type="submit">Ajouter</button>
+      </form>
+    </section>
+
+    <section class="product-list">
+      <h2>Produits Personnalisés</h2>
+      <ul id="product-container"></ul>
+    </section>
+
+    <section class="product-list">
+      <h2>Produits du Site</h2>
+      <ul id="site-product-container"></ul>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
